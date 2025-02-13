@@ -28,9 +28,9 @@ $resultado = $banco->query($select)->fetchAll();
                 <td> <?= $lista['id'] ?> </td>
                 <td> <?php echo $lista['nome'] ?> </td>
                 <td class="text-center">
-                    <a class="btn btn-primary" href="#">Link</a>
-                    <a class="btn btn-warning" href="#">Link</a>
-                    <a class="btn btn-danger" href="#">Link</a>
+                    <a class="btn btn-primary" href="./ficha.php?id_aluno=<?= $lista['id'] ?>">Abrir</a>
+                    <a class="btn btn-warning" href="#">Editar</a>
+                    <a class="btn btn-danger" href="#">Excluir</a>
                 </td>
             </tr>
         <?php } ?>
