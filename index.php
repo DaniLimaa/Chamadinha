@@ -17,6 +17,9 @@ $resultado = $banco->query($select)->fetchAll();
 ?>
 <main class="container my-5">
     <table class="table table-striped">
+        <div class="my-3 d-flex justify-content-end">
+            <a href="formulario.php" class="btn btn-success">Cadastar Novo Aluno</a>
+        </div>
         <tr>
             <td>Id</td>
             <td>Nome</td>
@@ -30,7 +33,8 @@ $resultado = $banco->query($select)->fetchAll();
                 <td class="text-center">
                     <a class="btn btn-primary" href="./ficha.php?id_aluno=<?= $lista['id'] ?>">Abrir</a>
                     <a class="btn btn-warning" href="#">Editar</a>
-                    <a class="btn btn-danger" href="#">Excluir</a>
+                    <a class="btn btn-danger" href="./aluno-deletar.php?id=<?= $lista['id'] ?>">Excluir</a>
+                    <!-- caminho arquivo ? -->
                 </td>
             </tr>
         <?php } ?>

@@ -38,10 +38,10 @@ $insert = 'INSERT INTO tb_info_alunos (telefone, email, nascimento, frequente, i
 $box = $banco->prepare($insert);
 
 $box->execute([
-    ':telefone' => $telFormulario,
-    ':email' => $emailFormulario,
-    ':nascimento' => $nascFormulario,
+    ':telefone' =>  $telFormulario,
+    ':email' =>     $emailFormulario,
+    ':nascimento' =>$nascFormulario,
     ':frequente' => $frequenteFormulario,
     ':id_alunos' => $id_aluno,
-    ':img' => $imgFormulario,
+    ':img' =>       $imgFormulario,
 ]);
