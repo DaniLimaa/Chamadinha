@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-$id_aluno = $_GET['id_aluno'];
+$id_alunos = $_GET['id_alunos'];
 
 $dsn = 'mysql:dbname=bd_chamadinha;host=127.0.0.1';
 $user = 'root';
@@ -8,17 +8,11 @@ $password = '';
 
 $banco = new PDO($dsn, $user, $password);
 
-$select = 'SELECT * FROM tb_info_alunos WHERE id_alunos = '. $id_aluno;
+$select = "SELECT tb_info_alunos.*, tb_alunos.nome FROM tb_info_alunos INNER JOIN tb_alunos ON tb_alunos.id = tb_info_alunos.id_alunos WHERE tb_info_alunos.id_alunos= " . $id_alunos;
 
 $dados = $banco->query($select)->fetch();
 
-echo '<pre>';   
-var_dump($dados);
-
 ?>
-
-
-
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -32,7 +26,8 @@ var_dump($dados);
     form {
         width: 600px;
     }
-    img{
+
+    img {
         width: 200px;
         object-fit: cover;
     }
@@ -52,13 +47,13 @@ var_dump($dados);
             </div>
             <div class="col">
                 <label for="email">E-mail</label>
-                <input type="email" value="<?= $dados ['email'] ?>" disabled class="form-control">
+                <input type="email" value="<?= $dados['email'] ?>" disabled class="form-control">
             </div>
         </div>
         <div class="row mt-2">
             <div class="col">
                 <label for="data_nascimento">Data Nascimento</label>
-                <input type="date" value="<?= $dados ['nascimento'] ?>" disabled class="form-control">
+                <input type="date" value="<?= $dados['nascimento'] ?>" disabled class="form-control">
             </div>
             <div class="col my-4 pt-2">
                 <input type="checkbox" class="form-check-input">

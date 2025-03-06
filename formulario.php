@@ -1,16 +1,19 @@
 <html lang="pt-br">
 
 <style>
-    form>input {
+    form {
         display: flex;
-        justify-content: center;
         align-items: center;
+        flex-direction: column;
     }
 
     input,
     h2 {
         width: 200px;
         margin: 5px;
+    }
+    form>div{
+    padding-left: 100px;
     }
 </style>
 
@@ -23,8 +26,8 @@ ACTION ->
     fala para onde deve enviar os dados
 -->
 
-<form action="./aluno-cadastrar.php" method="POST">
-    <h2>formulário</h2>
+<form action="./aluno-editar.php" method="POST">
+    <h2>Formulario</h2>
     <input type="text" placeholder="nome" name="nome">
     <input type="number" placeholder="telefone" name="telefone">
     <input type="email" placeholder="email" name="email">

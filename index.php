@@ -32,7 +32,9 @@ $resultado = $banco->query($select)->fetchAll();
                 <td> <?php echo $lista['nome'] ?> </td>
                 <td class="text-center">
                     <a class="btn btn-primary" href="./ficha.php?id_aluno=<?= $lista['id'] ?>">Abrir</a>
-                    <a class="btn btn-warning" href="#">Editar</a>
+                    <!-- GET antes do ? é o link de acesso depois da ? são variáveis -->
+                    <a class="btn btn-warning" href="./formulario-editar.php?id_aluno_alterar=<?= $lista['id'] ?>">Editar</a>
+
                     <a class="btn btn-danger" href="./aluno-deletar.php?id=<?= $lista['id'] ?>">Excluir</a>
                     <!-- caminho arquivo ? -->
                 </td>

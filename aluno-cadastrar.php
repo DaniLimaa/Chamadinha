@@ -1,11 +1,6 @@
 <?php
 echo '<h1>Cadastro de Aluno</h1>';
 
-echo'<pre>';
-var_dump(
-    $_POST
-);
-
 $nomeFormulario = $_POST['nome'];
 
 $dsn = 'mysql:dbname=bd_chamadinha;host=127.0.0.1';
