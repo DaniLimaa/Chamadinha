@@ -23,7 +23,7 @@ echo $id_aluno;
 
 $telFormulario = $_POST['telefone'];
 $emailFormulario = $_POST['email'];
-$nascFormulario = $_POST['nasc'];
+$nascFormulario = $_POST['nascimento'];
 $frequenteFormulario = $_POST['frequente'];
 $id_aluno = $banco->lastInsertId();
 $imgFormulario = $_POST['img'];

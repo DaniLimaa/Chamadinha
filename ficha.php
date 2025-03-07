@@ -1,6 +1,6 @@
 <?php
 
-$id_alunos = $_GET['id_alunos'];
+$id_aluno = $_GET['id_aluno'];
 
 $dsn = 'mysql:dbname=bd_chamadinha;host=127.0.0.1';
 $user = 'root';
@@ -8,7 +8,7 @@ $password = '';
 
 $banco = new PDO($dsn, $user, $password);
 
-$select = "SELECT tb_info_alunos.*, tb_alunos.nome FROM tb_info_alunos INNER JOIN tb_alunos ON tb_alunos.id = tb_info_alunos.id_alunos WHERE tb_info_alunos.id_alunos= " . $id_alunos;
+$select = "SELECT tb_info_alunos.*, tb_alunos.nome FROM tb_info_alunos INNER JOIN tb_alunos ON tb_alunos.id = tb_info_alunos.id_alunos WHERE tb_info_alunos.id_alunos= " . $id_aluno;
 
 $dados = $banco->query($select)->fetch();
 
@@ -39,7 +39,7 @@ $dados = $banco->query($select)->fetch();
 
     <form action="#">
         <label for="nome">Nome</label>
-        <input type="text" value="Paulo Santos" disabled class="form-control">
+        <input type="text" value="<?= $dados['nome'] ?>" disabled class="form-control">
         <div class="row mt-2">
             <div class="col">
                 <label for="telefone">Telefone</label>

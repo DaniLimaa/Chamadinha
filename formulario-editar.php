@@ -38,7 +38,7 @@ $dados = $banco->query($select)->fetch();
     <h2>Editar Cadastro</h2>
     <img src="./img/<?= $dados['img'] ?>" alt="">
 
-    <input type="hidden"    placeholder="id"         name="id"         value="<?= $dados['id'] ?>">
+    <input type="hidden"    placeholder="id"         name="id"         value="<?= $id_aluno_alterar ?>">
 
     <input type="text"      placeholder="nome"       name="nome"       value="<?= $dados['nome'] ?>">
     <input type="number"    placeholder="telefone"   name="telefone"   value="<?= $dados['telefone'] ?>">
