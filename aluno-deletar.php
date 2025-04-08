@@ -24,8 +24,8 @@ $box->execute([
     ':id_alunos' => $idFormulario
 ]);
 
-echo '<script>
-    alert("Usuario apagado com sucesso")
-    window.location.replace("index.php")
-</script>';
+    echo '<script>
+        alert("Usuario apagado com sucesso")
+        window.location.replace("index.php")
+    </script>';
 // header('location:index.php');
